@@ -24,7 +24,8 @@
     b.addEventListener('click', () => { go(i); restart(); });
     return b;
   });
-  document.getElementById('heroDots').append(...dots);
+  // точки и смена слайдов нужны, только когда слайдов больше одного
+  if (slides.length > 1) document.getElementById('heroDots').append(...dots);
   let cur = 0, timer = 0;
   const heroVideo = document.getElementById('heroVideo');
   const go = (i) => {
@@ -40,6 +41,7 @@
   // у слайда может быть своё время показа в data-hold
   const restart = () => {
     clearTimeout(timer);
+    if (slides.length < 2) return;
     timer = setTimeout(() => { go(cur + 1); restart(); }, +slides[cur].dataset.hold || 6500);
   };
   go(0);
