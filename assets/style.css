@@ -351,3 +351,12 @@ h2 { font-weight: 600; text-transform: uppercase; letter-spacing: 0.01em; font-s
   .hero .slide, .hero .slide .hero-bg img { transition: none; }
 }
 .hero .slide::after { background: linear-gradient(0deg, #000 3%, #000d 40%, #0007 62%, #0000 82%); }
+
+/* smaller hero headline so the photo stays visible */
+h1, .h1 { font-size: clamp(30px, 4.2vw, 64px); line-height: 1.08; }
+.hero .hero-text { max-width: 620px; }
+.hero .lead { margin-top: 16px; font-size: clamp(15px, 1.2vw, 18px); max-width: 42ch; }
+.hero .actions { margin-top: 26px; }
+.hero .btn { min-height: 48px; padding: 0 26px; font-size: 14px; }
+.hero .slide { padding-bottom: clamp(70px, 10vh, 110px); }
+.hero .slide::after { background: linear-gradient(0deg, #000 2%, #000c 26%, #0005 46%, #0000 66%); }
