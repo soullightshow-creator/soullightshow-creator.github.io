@@ -1,0 +1,164 @@
+# Настройки панели управления сайтом (Pages CMS, app.pagescms.org)
+media:
+  input: assets/img
+  output: /assets/img
+  categories: [image]
+  rename: safe
+
+content:
+  - name: products
+    label: Товары
+    type: file
+    path: content/products.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Название
+        type: string
+        required: true
+      - name: name_en
+        label: Название на английском
+        type: string
+      - name: id
+        label: Имя для ссылки
+        description: Латинские буквы, цифры и дефис, без пробелов. Например led-fan. У каждого товара своё.
+        type: string
+        required: true
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: Только маленькие латинские буквы, цифры и дефис
+      - name: images
+        label: Фотографии
+        description: Первая фотография показывается на карточке товара.
+        type: image
+        options:
+          multiple:
+            max: 12
+      - name: price
+        label: Цена
+        description: Например 38 000 ₽. Если оставить пустым, на сайте будет «Цена по запросу».
+        type: string
+      - name: badge
+        label: Метка
+        description: Например Новинка или Хит. Можно оставить пустым.
+        type: string
+      - name: short
+        label: Короткое описание для карточки
+        type: text
+      - name: short_en
+        label: Короткое описание на английском
+        type: text
+      - name: text
+        label: Полное описание
+        type: text
+      - name: text_en
+        label: Полное описание на английском
+        type: text
+      - name: features
+        label: Особенности
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{ru}"
+        fields:
+          - name: ru
+            label: По-русски
+            type: string
+          - name: en
+            label: По-английски
+            type: string
+      - name: kit
+        label: Что входит в комплект
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{ru}"
+        fields:
+          - name: ru
+            label: По-русски
+            type: string
+          - name: en
+            label: По-английски
+            type: string
+      - name: specs
+        label: Характеристики
+        description: Например Вес и 370 г. Если список пустой, блок на сайте не показывается.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}: {value}"
+        fields:
+          - name: name
+            label: Параметр
+            type: string
+          - name: value
+            label: Значение
+            type: string
+          - name: name_en
+            label: Параметр на английском
+            type: string
+          - name: value_en
+            label: Значение на английском
+            type: string
+      - name: video
+        label: Ссылка на видео
+        description: Ссылка для встраивания с VK Видео, Rutube или YouTube. Можно оставить пустым.
+        type: string
+
+  - name: gallery
+    label: Галерея
+    type: file
+    path: content/gallery.json
+    format: json
+    list: true
+    fields:
+      - name: image
+        label: Фотография
+        type: image
+        required: true
+      - name: caption
+        label: Подпись
+        type: string
+      - name: caption_en
+        label: Подпись на английском
+        type: string
+      - name: wide
+        label: Широкая плитка
+        type: boolean
+      - name: tall
+        label: Высокая плитка
+        type: boolean
+
+  - name: site
+    label: Контакты и платы
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: telegram
+        label: Telegram
+        description: Имя без собачки или полная ссылка. Пустые контакты на сайте не показываются.
+        type: string
+      - name: whatsapp
+        label: WhatsApp
+        description: Номер с кодом страны, например 79001234567.
+        type: string
+      - name: phone
+        label: Телефон
+        description: Например +7 900 123-45-67.
+        type: string
+      - name: email
+        label: Почта
+        type: string
+      - name: vk
+        label: ВКонтакте
+        description: Полная ссылка на группу.
+        type: string
+      - name: boards
+        label: Поддерживаемые платы
+        type: string
+        list: true

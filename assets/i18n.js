@@ -98,7 +98,8 @@
     // контакты
     'Расскажите о вашем событии': 'Tell us about your event',
     'Дата, город и формат. Ответим с программой и стоимостью.': "Date, city and format. We'll reply with a programme and a price.",
-    'Позвонить': 'Call',
+    'Позвонить': 'Call', 'Контакты скоро появятся.': 'Contact details are coming soon.', 'ВКонтакте': 'VK',
+    'Новинка': 'New', 'Хит': 'Bestseller',
 
     // страница товара
     'Узнать цену и сроки': 'Get price and lead time',
@@ -137,7 +138,7 @@
   // remember the Russian originals so switching back needs no reload
   const textOrig = new WeakMap();
   const attrOrig = new WeakMap();
-  const titleRu = document.title;
+  let titleRu = document.title;
 
   const apply = (lang) => {
     const walker = document.createTreeWalker(document.documentElement, NodeFilter.SHOW_TEXT, {
@@ -158,8 +159,7 @@
         el.setAttribute(a, tr(ru, lang) ?? ru);
       }
     });
-    document.title = titleRu.split('. ').map((part) => tr(part, lang) ?? part).join('. ');
-    if (lang !== 'ru' && EN[titleRu]) document.title = EN[titleRu];
+    document.title = lang === 'ru' ? titleRu : EN[titleRu] ?? titleRu.split('. ').map((part) => tr(part, lang) ?? part).join('. ');
     document.documentElement.lang = lang;
     document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === lang));
   };
@@ -178,6 +178,13 @@
     store.set(lang);
     apply(lang);
   }));
+
+  // для содержимого, которое подгружается из папки content
+  window.I18N = {
+    add: (ru, en) => { EN[norm(ru)] = en; },
+    setTitle: (ru, en) => { titleRu = ru; if (en) EN[ru] = en; apply(lang); },
+    apply: () => apply(lang),
+  };
 
   apply(lang);
 })();

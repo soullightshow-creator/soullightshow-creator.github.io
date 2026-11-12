@@ -1,0 +1,94 @@
+[
+  {
+    "id": "costume",
+    "name": "Пиксельный костюм",
+    "name_en": "Pixel suit",
+    "short": "Шлем, жилет, пояс, накладки на руки и ноги. Каждый светодиод управляется отдельно.",
+    "short_en": "Helmet, vest, belt, arm and leg panels. Every LED is individually controlled.",
+    "text": "Костюм из светодиодных панелей, который работает как экран на артисте. Цвета, узоры и анимация меняются по программе номера, одинаково на всей группе или у каждого по своему.",
+    "text_en": "A suit of LED panels that works like a screen on the performer. Colours, patterns and animation follow the act's programme, identical across the crew or different for each performer.",
+    "price": "",
+    "badge": "",
+    "images": ["/assets/img/trio-rgb.webp", "/assets/img/four-cyan.webp", "/assets/img/four-red.webp", "/assets/img/helmets-macro.webp"],
+    "kit": [
+      { "ru": "Шлем с матрицей", "en": "Helmet with LED matrix" },
+      { "ru": "Жилет", "en": "Vest" },
+      { "ru": "Пояс", "en": "Belt" },
+      { "ru": "Накладки на плечи и предплечья", "en": "Upper arm and forearm panels" },
+      { "ru": "Накладки на бёдра и голени", "en": "Thigh and shin panels" }
+    ],
+    "features": [
+      { "ru": "Каждый светодиод управляется отдельно", "en": "Every LED is individually controlled" },
+      { "ru": "Любые цвета и анимация под музыку", "en": "Any colours and animation set to music" },
+      { "ru": "Группа костюмов работает как единая картинка", "en": "A group of suits works as one picture" }
+    ],
+    "specs": [],
+    "video": ""
+  },
+  {
+    "id": "helmet",
+    "name": "Шлем",
+    "name_en": "Helmet",
+    "short": "Изогнутая светодиодная матрица с прорезями для глаз. Можно заказать отдельно от костюма.",
+    "short_en": "A curved LED matrix with eye openings. Can be ordered separately from the suit.",
+    "text": "Шлем с изогнутой светодиодной матрицей по всей лицевой части. Работает вместе с костюмом или сам по себе, как яркий акцент образа.",
+    "text_en": "A helmet with a curved LED matrix across the whole face. Works with the suit or on its own as a bright accent.",
+    "price": "",
+    "badge": "",
+    "images": ["/assets/img/helmets-macro.webp", "/assets/img/four-cyan.webp", "/assets/img/trio-rgb.webp"],
+    "kit": [
+      { "ru": "Шлем с матрицей", "en": "Helmet with LED matrix" }
+    ],
+    "features": [
+      { "ru": "Матрица по всей лицевой части", "en": "Matrix across the whole face" },
+      { "ru": "Прорези для обзора", "en": "Openings for visibility" },
+      { "ru": "Анимация и смена цвета по программе", "en": "Programmed animation and colour changes" }
+    ],
+    "specs": [],
+    "video": ""
+  },
+  {
+    "id": "cube",
+    "name": "Световой куб",
+    "name_en": "Light cube",
+    "short": "Лёгкий каркас со светодиодными рёбрами. Держит вращения и броски.",
+    "short_en": "A lightweight frame with LED edges. Handles spins and tosses.",
+    "text": "Объёмный куб со светодиодными рёбрами для манипуляций и построений. Читается с любого места в зале и хорошо смотрится в группе.",
+    "text_en": "A three-dimensional cube with LED edges for manipulation and formations. Reads from any seat in the hall and looks great in a group.",
+    "price": "",
+    "badge": "",
+    "images": ["/assets/img/cubes-four.webp", "/assets/img/cubes-up.webp", "/assets/img/cubes-gold.webp"],
+    "kit": [
+      { "ru": "Световой куб", "en": "Light cube" }
+    ],
+    "features": [
+      { "ru": "Светятся все рёбра", "en": "All edges light up" },
+      { "ru": "Подходит для вращений и построений", "en": "Suited to spins and formations" },
+      { "ru": "Работает вместе с костюмами", "en": "Works together with the suits" }
+    ],
+    "specs": [],
+    "video": ""
+  },
+  {
+    "id": "fan",
+    "name": "Веер",
+    "name_en": "Fan",
+    "short": "Светодиодные лучи на складной основе. Работает в паре и в общих фигурах.",
+    "short_en": "LED rays on a folding base. Works in pairs and in group shapes.",
+    "text": "Веер со светодиодными лучами. В паре и в группе складывается в крупные фигуры, от крыльев до сердца.",
+    "text_en": "A fan with LED rays. In pairs and groups it forms large shapes, from wings to a heart.",
+    "price": "",
+    "badge": "",
+    "images": ["/assets/img/hero-fans.webp", "/assets/img/fans-heart.webp", "/assets/img/fans-purple.webp", "/assets/img/fans-duo.webp"],
+    "kit": [
+      { "ru": "Пара вееров", "en": "A pair of fans" }
+    ],
+    "features": [
+      { "ru": "Каждый луч светится по всей длине", "en": "Each ray lights along its full length" },
+      { "ru": "Смена цвета по программе", "en": "Programmed colour changes" },
+      { "ru": "Складываются в общие фигуры группы", "en": "Combine into group shapes" }
+    ],
+    "specs": [],
+    "video": ""
+  }
+]

@@ -289,3 +289,7 @@ a.card { color: inherit; }
   .lang { margin-left: auto; }
   .burger { margin-left: 4px; }
 }
+
+/* gallery tiles and card images now come from content files */
+.g > img { width: 100%; height: 100%; }
+.contact .actions .sub { margin: 0; }

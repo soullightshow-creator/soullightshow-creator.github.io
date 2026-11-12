@@ -1,73 +1,64 @@
 (() => {
+  const { getJSON, src, t, el, translate, productCard, menu } = window.SL;
   const $ = (id) => document.getElementById(id);
-  $('year').textContent = new Date().getFullYear();
+  menu();
 
-  const burger = $('burger'), nav = $('nav');
-  burger.addEventListener('click', () => {
-    const open = !nav.classList.contains('open');
-    nav.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', open);
-  });
+  getJSON('content/products.json').then((list) => {
+    const id = new URLSearchParams(location.search).get('id');
+    const p = list.find((x, i) => String(x.id || i) === id) || list[0];
+    if (!p) return;
 
-  const list = window.PRODUCTS || [];
-  const id = new URLSearchParams(location.search).get('id');
-  const p = list.find((x) => x.id === id) || list[0];
-  if (!p) return;
+    const name = t(p.name, p.name_en);
+    if (window.I18N) window.I18N.setTitle(name + '. SOUL LIGHT', (p.name_en || name) + '. SOUL LIGHT');
+    else document.title = name + '. SOUL LIGHT';
+    $('crumb').textContent = name;
+    $('pdName').textContent = name;
+    $('pdText').textContent = t(p.text, p.text_en) || t(p.short, p.short_en);
+    $('pdPrice').textContent = p.price || 'Цена по запросу';
+    if (p.badge) { $('pdBadge').textContent = p.badge; $('pdBadge').hidden = false; }
 
-  const img = (name) => `assets/img/${name}.webp`;
-  const li = (items, el) => items.forEach((t) => { const n = document.createElement('li'); n.textContent = t; el.append(n); });
-
-  document.title = `${p.name}. SOUL LIGHT`;
-  $('crumb').textContent = p.name;
-  $('pdName').textContent = p.name;
-  $('pdText').textContent = p.text;
-  $('pdPrice').textContent = p.price || 'Цена по запросу';
-  if (p.badge) { $('pdBadge').textContent = p.badge; $('pdBadge').hidden = false; }
-
-  // gallery
-  const main = $('pdMain'), thumbs = $('pdThumbs');
-  const pick = (i) => {
-    main.src = img(p.images[i]);
-    main.alt = p.name;
-    [...thumbs.children].forEach((b, k) => b.classList.toggle('on', k === i));
-  };
-  p.images.forEach((name, i) => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('aria-label', `Фото ${i + 1}`);
-    b.innerHTML = `<img src="${img(name)}" alt="" loading="lazy">`;
-    b.addEventListener('click', () => pick(i));
-    thumbs.append(b);
-  });
-  pick(0);
-  if (p.images.length < 2) thumbs.hidden = true;
-
-  // optional blocks
-  if (p.features?.length) li(p.features, $('pdFeatures')); else $('pdFeaturesBox').hidden = true;
-  if (p.kit?.length) li(p.kit, $('pdKit')); else $('pdKitBox').hidden = true;
-  if (p.specs?.length) {
-    p.specs.forEach(([k, v]) => {
-      const dt = document.createElement('dt'), dd = document.createElement('dd');
-      dt.textContent = k; dd.textContent = v;
-      $('pdSpecs').append(dt, dd);
+    // галерея
+    const images = (p.images || []).map(src);
+    const main = $('pdMain'), thumbs = $('pdThumbs');
+    const pick = (i) => {
+      main.src = images[i];
+      main.alt = name;
+      [...thumbs.children].forEach((b, k) => b.classList.toggle('on', k === i));
+    };
+    images.forEach((path, i) => {
+      const b = el('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Фото ' + (i + 1));
+      const img = el('img');
+      img.src = path; img.alt = ''; img.loading = 'lazy';
+      b.append(img);
+      b.addEventListener('click', () => pick(i));
+      thumbs.append(b);
     });
-    $('pdSpecsBox').hidden = false;
-  }
-  if (p.options?.length) {
-    p.options.forEach((t) => { const s = document.createElement('span'); s.textContent = t; $('pdOptions').append(s); });
-    $('pdOptions').hidden = false;
-  }
-  if (p.video) { $('pdVideo').src = p.video; $('pdVideoBox').hidden = false; }
+    if (images.length) pick(0);
+    if (images.length < 2) thumbs.hidden = true;
 
-  // other products
-  list.filter((x) => x.id !== p.id).forEach((x) => {
-    const a = document.createElement('a');
-    a.className = 'card';
-    a.href = `product.html?id=${x.id}`;
-    a.innerHTML = `<img loading="lazy" src="${img(x.images[0])}" alt=""><h3></h3><p></p><span class="link"></span>`;
-    a.querySelector('h3').textContent = x.name;
-    a.querySelector('p').textContent = x.short;
-    a.querySelector('.link').textContent = x.price || 'Цена по запросу';
-    $('pdMore').append(a);
-  });
+    // блоки показываются только если заполнены
+    const pairs = (arr) => (arr || []).filter((x) => x && x.ru);
+    const fill = (arr, listId, boxId) => {
+      const rows = pairs(arr);
+      if (!rows.length) { $(boxId).hidden = true; return; }
+      rows.forEach((x) => $(listId).append(el('li', '', t(x.ru, x.en))));
+    };
+    fill(p.features, 'pdFeatures', 'pdFeaturesBox');
+    fill(p.kit, 'pdKit', 'pdKitBox');
+    const specs = (p.specs || []).filter((x) => x && x.name);
+    if (specs.length) {
+      specs.forEach((x) => $('pdSpecs').append(el('dt', '', t(x.name, x.name_en)), el('dd', '', t(x.value, x.value_en))));
+      $('pdSpecsBox').hidden = false;
+    }
+    if (p.video) { $('pdVideo').src = p.video; $('pdVideoBox').hidden = false; }
+
+    // остальные товары
+    const others = list.filter((x) => x !== p);
+    if (others.length) $('pdMore').replaceChildren(...others.map((x) => productCard(x, list.indexOf(x))));
+    else $('pdMore').closest('section').hidden = true;
+
+    translate();
+  }).catch(console.error);
 })();
