@@ -33,7 +33,7 @@
   };
   const restart = () => {
     clearInterval(timer);
-    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(() => go(cur + 1), 6500);
+    timer = setInterval(() => go(cur + 1), 6500);
   };
   go(0);
   restart();
