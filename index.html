@@ -33,21 +33,47 @@
 
 <main>
 
-<section class="hero">
-  <picture class="hero-bg">
-    <source srcset="assets/img/hero-fans.webp" type="image/webp">
-    <img src="assets/img/hero-fans.jpg" alt="Четыре артиста в пиксельных костюмах со светодиодными веерами" width="1920" height="1080">
-  </picture>
-  <!-- сюда позже встанет зацикленное видео: <video class="hero-bg" autoplay muted loop playsinline poster="assets/img/hero-fans.jpg"> -->
-  <div class="hero-text">
-    <p class="eyebrow">Световое пиксельное шоу</p>
-    <h1>Свет, который<br>танцует</h1>
-    <p class="lead">Шоу в светодиодных костюмах и реквизит собственной разработки. Каждый пиксель управляется и попадает в музыку.</p>
-    <div class="actions">
-      <a class="btn" href="#contact">Заказать шоу</a>
-      <a class="btn btn-ghost" href="#props">Смотреть реквизит</a>
+<section class="hero" id="hero">
+  <div class="slide on">
+    <picture class="hero-bg">
+      <source srcset="assets/img/hero-fans.webp" type="image/webp">
+      <img src="assets/img/hero-fans.jpg" alt="Четыре артиста в пиксельных костюмах со светодиодными веерами" width="1920" height="1080">
+    </picture>
+    <div class="hero-text">
+      <p class="eyebrow">Световое пиксельное шоу</p>
+      <h1>Свет, который<br>танцует</h1>
+      <p class="lead">Шоу в светодиодных костюмах и реквизит собственной разработки. Каждый пиксель управляется и попадает в музыку.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Заказать шоу</a>
+        <a class="btn btn-ghost" href="#props">Смотреть реквизит</a>
+      </div>
     </div>
   </div>
+  <div class="slide">
+    <picture class="hero-bg"><img loading="lazy" src="assets/img/cubes-four.webp" alt="Артисты со светящимися кубами" width="1600" height="1201"></picture>
+    <div class="hero-text">
+      <p class="eyebrow">Световые кубы</p>
+      <h2 class="h1">Геометрия<br>из света</h2>
+      <p class="lead">Объёмные кубы со светодиодными рёбрами для вращений и построений.</p>
+      <div class="actions">
+        <a class="btn" href="product.html?id=cube">К товару</a>
+        <a class="btn btn-ghost" href="#show">О шоу</a>
+      </div>
+    </div>
+  </div>
+  <div class="slide">
+    <picture class="hero-bg"><img loading="lazy" src="assets/img/trio-rgb.webp" alt="Пиксельные костюмы трёх цветов" width="1600" height="1200"></picture>
+    <div class="hero-text">
+      <p class="eyebrow">Пиксельные костюмы</p>
+      <h2 class="h1">Костюм<br>как экран</h2>
+      <p class="lead">Шлем, жилет и накладки из светодиодных панелей. Цвет и анимация задаются для каждого пикселя.</p>
+      <div class="actions">
+        <a class="btn" href="product.html?id=costume">К товару</a>
+        <a class="btn btn-ghost" href="#tech">Технологии</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-dots" id="heroDots" role="tablist" aria-label="Слайды"></div>
   <div class="pixels" aria-hidden="true"></div>
 </section>
 
@@ -177,6 +203,15 @@
   <div class="grid" id="grid"></div>
 </section>
 
+
+
+<section class="section" id="reviews" hidden>
+  <div class="head">
+    <p class="eyebrow">Отзывы</p>
+    <h2>Что говорят о нас</h2>
+  </div>
+  <div class="reviews" id="reviewList"></div>
+</section>
 
 <section class="section" id="order">
   <div class="head">

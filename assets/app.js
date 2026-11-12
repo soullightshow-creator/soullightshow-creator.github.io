@@ -15,6 +15,50 @@
   const reveal = (els) => { if (io) els.forEach((n) => { n.classList.add('rv'); io.observe(n); }); };
   reveal(document.querySelectorAll('.head, .show, .tech-card, .boards, .order li, .terms div, .lab-img, .lab-text, .contact > *'));
 
+  // слайдер первого экрана
+  const slides = [...document.querySelectorAll('#hero .slide')];
+  const dots = slides.map((_, i) => {
+    const b = el('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Слайд ' + (i + 1));
+    b.addEventListener('click', () => { go(i); restart(); });
+    return b;
+  });
+  document.getElementById('heroDots').append(...dots);
+  let cur = 0, timer = 0;
+  const go = (i) => {
+    cur = (i + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle('on', k === cur));
+    dots.forEach((d, k) => d.setAttribute('aria-selected', k === cur));
+  };
+  const restart = () => {
+    clearInterval(timer);
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(() => go(cur + 1), 6500);
+  };
+  go(0);
+  restart();
+
+  // отзывы: раздел появляется, когда в панели есть хотя бы один
+  getJSON('content/reviews.json').then((data) => {
+    const list = (data.items || []).filter((r) => r && r.name && r.text);
+    if (!list.length) return;
+    const cards = list.map((r) => {
+      const c = el('figure', 'review');
+      c.append(el('blockquote', '', t(r.text, r.text_en)));
+      const cap = el('figcaption');
+      if (r.photo) { const im = el('img'); im.src = src(r.photo); im.alt = ''; im.loading = 'lazy'; cap.append(im); }
+      const who = el('div');
+      who.append(el('b', '', r.name), el('span', '', t(r.role, r.role_en)));
+      cap.append(who);
+      c.append(cap);
+      return c;
+    });
+    document.getElementById('reviewList').replaceChildren(...cards);
+    document.getElementById('reviews').hidden = false;
+    reveal(cards);
+    translate();
+  }).catch(console.error);
+
   // товары
   getJSON('content/products.json').then((data) => {
     const list = data.items || data;

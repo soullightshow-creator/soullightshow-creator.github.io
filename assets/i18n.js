@@ -19,6 +19,13 @@
     'Заказать шоу': 'Book a show', 'Смотреть реквизит': 'See the props',
     'Четыре артиста в пиксельных костюмах со светодиодными веерами': 'Four performers in pixel suits with LED fans',
 
+    'Геометрия': 'Geometry', 'из света': 'made of light',
+    'Объёмные кубы со светодиодными рёбрами для вращений и построений.': 'Three-dimensional cubes with LED edges for spins and formations.',
+    'Костюм': 'A suit', 'как экран': 'that is a screen',
+    'Шлем, жилет и накладки из светодиодных панелей. Цвет и анимация задаются для каждого пикселя.': 'Helmet, vest and panels made of LED matrices. Colour and animation are set for every pixel.',
+    'К товару': 'View product', 'О шоу': 'About the show', 'Слайды': 'Slides',
+    'Отзывы': 'Reviews', 'Что говорят о нас': 'What people say',
+
     // преимущества
     'Преимущества': 'Advantages',
     'Своя разработка': 'In-house engineering', 'Электронику, корпуса и программы делаем сами.': 'We build the electronics, housings and software ourselves.',
@@ -131,8 +138,8 @@
     if (lang === 'ru') return ru;
     const key = norm(ru);
     if (EN[key]) return EN[key];
-    const m = key.match(/^Фото (\d+)$/);
-    return m ? `Photo ${m[1]}` : null;
+    const m = key.match(/^(Фото|Слайд) (\d+)$/);
+    return m ? `${m[1] === 'Фото' ? 'Photo' : 'Slide'} ${m[2]}` : null;
   };
 
   // remember the Russian originals so switching back needs no reload

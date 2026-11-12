@@ -145,6 +145,42 @@ content:
     - name: tall
       label: Высокая плитка
       type: boolean
+- name: reviews
+  label: Отзывы
+  type: file
+  path: content/reviews.json
+  format: json
+  fields:
+  - name: items
+    label: Список отзывов
+    description: Пока список пустой, раздел «Отзывы» на сайте не показывается.
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{name}'
+    fields:
+    - name: name
+      label: Имя или название коллектива
+      type: string
+      required: true
+    - name: role
+      label: Кто это
+      description: 'Например: артист, шоу-балет, организатор.'
+      type: string
+    - name: role_en
+      label: Кто это, на английском
+      type: string
+    - name: text
+      label: Текст отзыва
+      type: text
+      required: true
+    - name: text_en
+      label: Текст отзыва на английском
+      type: text
+    - name: photo
+      label: Фото
+      type: image
 - name: site
   label: Контакты, соцсети, платы
   type: file
