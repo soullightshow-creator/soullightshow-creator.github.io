@@ -3,7 +3,8 @@
   const $ = (id) => document.getElementById(id);
   menu();
 
-  getJSON('content/products.json').then((list) => {
+  getJSON('content/products.json').then((data) => {
+    const list = data.items || data;
     const id = new URLSearchParams(location.search).get('id');
     const p = list.find((x, i) => String(x.id || i) === id) || list[0];
     if (!p) return;

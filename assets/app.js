@@ -16,7 +16,8 @@
   reveal(document.querySelectorAll('.head, .show, .tech-card, .boards, .order li, .terms div, .lab-img, .lab-text, .contact > *'));
 
   // товары
-  getJSON('content/products.json').then((list) => {
+  getJSON('content/products.json').then((data) => {
+    const list = data.items || data;
     const cards = list.map(productCard);
     document.getElementById('cards').replaceChildren(...cards);
     reveal(cards);
@@ -45,7 +46,8 @@
     if (e.key === 'ArrowLeft') show(idx - 1);
     if (e.key === 'ArrowRight') show(idx + 1);
   });
-  getJSON('content/gallery.json').then((list) => {
+  getJSON('content/gallery.json').then((data) => {
+    const list = data.items || data;
     items = list.filter((g) => g.image).map((g, i) => {
       const a = el('a', 'g' + (g.wide ? ' wide' : '') + (g.tall ? ' tall' : ''));
       a.href = src(g.image);

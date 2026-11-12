@@ -1,12 +1,74 @@
-[
-  { "image": "/assets/img/fans-heart.webp", "caption": "Сердце из светодиодных вееров", "caption_en": "A heart made of LED fans", "wide": false, "tall": true },
-  { "image": "/assets/img/hero-fans.webp", "caption": "Веера и пиксельные костюмы", "caption_en": "Fans and pixel suits", "wide": true, "tall": false },
-  { "image": "/assets/img/four-red.webp", "caption": "Четыре артиста в красных костюмах", "caption_en": "Four performers in red suits", "wide": false, "tall": false },
-  { "image": "/assets/img/trio-rgb.webp", "caption": "Акробатический элемент в костюмах", "caption_en": "An acrobatic move in suits", "wide": false, "tall": false },
-  { "image": "/assets/img/cubes-gold.webp", "caption": "Золотые световые кубы", "caption_en": "Golden light cubes", "wide": false, "tall": true },
-  { "image": "/assets/img/four-cyan.webp", "caption": "Бирюзовые костюмы", "caption_en": "Turquoise suits", "wide": false, "tall": false },
-  { "image": "/assets/img/cubes-four.webp", "caption": "Артисты с кубами", "caption_en": "Performers with cubes", "wide": false, "tall": false },
-  { "image": "/assets/img/fans-purple.webp", "caption": "Фиолетовые костюмы с веерами", "caption_en": "Purple suits with fans", "wide": true, "tall": false },
-  { "image": "/assets/img/cubes-up.webp", "caption": "Кубы над головой", "caption_en": "Cubes overhead", "wide": false, "tall": false },
-  { "image": "/assets/img/fans-duo.webp", "caption": "Дуэт с веерами", "caption_en": "A duo with fans", "wide": false, "tall": false }
-]
+{
+  "items": [
+    {
+      "image": "/assets/img/fans-heart.webp",
+      "caption": "Сердце из светодиодных вееров",
+      "caption_en": "A heart made of LED fans",
+      "wide": false,
+      "tall": true
+    },
+    {
+      "image": "/assets/img/hero-fans.webp",
+      "caption": "Веера и пиксельные костюмы",
+      "caption_en": "Fans and pixel suits",
+      "wide": true,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/four-red.webp",
+      "caption": "Четыре артиста в красных костюмах",
+      "caption_en": "Four performers in red suits",
+      "wide": false,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/trio-rgb.webp",
+      "caption": "Акробатический элемент в костюмах",
+      "caption_en": "An acrobatic move in suits",
+      "wide": false,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/cubes-gold.webp",
+      "caption": "Золотые световые кубы",
+      "caption_en": "Golden light cubes",
+      "wide": false,
+      "tall": true
+    },
+    {
+      "image": "/assets/img/four-cyan.webp",
+      "caption": "Бирюзовые костюмы",
+      "caption_en": "Turquoise suits",
+      "wide": false,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/cubes-four.webp",
+      "caption": "Артисты с кубами",
+      "caption_en": "Performers with cubes",
+      "wide": false,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/fans-purple.webp",
+      "caption": "Фиолетовые костюмы с веерами",
+      "caption_en": "Purple suits with fans",
+      "wide": true,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/cubes-up.webp",
+      "caption": "Кубы над головой",
+      "caption_en": "Cubes overhead",
+      "wide": false,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/fans-duo.webp",
+      "caption": "Дуэт с веерами",
+      "caption_en": "A duo with fans",
+      "wide": false,
+      "tall": false
+    }
+  ]
+}
