@@ -47,6 +47,22 @@
   go(0);
   restart();
 
+  // клип поверх фото: играет видео, потом показывается фото, и так по кругу
+  document.querySelectorAll('video.clip').forEach((v) => {
+    let visible = false, timer = 0;
+    const play = () => { if (!visible) return; v.currentTime = 0; v.classList.remove('off'); v.play().catch(() => {}); };
+    v.addEventListener('ended', () => {
+      v.classList.add('off');
+      clearTimeout(timer);
+      timer = setTimeout(play, +v.dataset.photo || 5000);
+    });
+    new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      clearTimeout(timer);
+      if (visible) play(); else v.pause();
+    }, { threshold: 0.35 }).observe(v);
+  });
+
   // отзывы: раздел появляется, когда в панели есть хотя бы один
   getJSON('content/reviews.json').then((data) => {
     const list = (data.items || []).filter((r) => r && r.name && r.text);
