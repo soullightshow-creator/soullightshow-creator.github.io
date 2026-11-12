@@ -23,6 +23,7 @@
     'Объёмные кубы со светодиодными рёбрами для вращений и построений.': 'Three-dimensional cubes with LED edges for spins and formations.',
     'Костюм': 'A suit', 'как экран': 'that is a screen',
     'Шлем, жилет и накладки из светодиодных панелей. Цвет и анимация задаются для каждого пикселя.': 'Helmet, vest and panels made of LED matrices. Colour and animation are set for every pixel.',
+    'Шоу целиком за две минуты': 'The whole show in two minutes', 'Фрагменты светового шоу SOUL LIGHT': 'Highlights of the SOUL LIGHT show',
     'К товару': 'View product', 'О шоу': 'About the show', 'Слайды': 'Slides',
     'Отзывы': 'Reviews', 'Что говорят о нас': 'What people say',
 

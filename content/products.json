@@ -14,7 +14,9 @@
         "/assets/img/trio-rgb.webp",
         "/assets/img/four-cyan.webp",
         "/assets/img/four-red.webp",
-        "/assets/img/helmets-macro.webp"
+        "/assets/img/helmets-macro.webp",
+        "/assets/img/v-blue-five.webp",
+        "/assets/img/v-closeup.webp"
       ],
       "kit": [
         {
@@ -68,7 +70,8 @@
       "images": [
         "/assets/img/helmets-macro.webp",
         "/assets/img/four-cyan.webp",
-        "/assets/img/trio-rgb.webp"
+        "/assets/img/trio-rgb.webp",
+        "/assets/img/v-closeup.webp"
       ],
       "kit": [
         {
@@ -106,7 +109,8 @@
       "images": [
         "/assets/img/cubes-four.webp",
         "/assets/img/cubes-up.webp",
-        "/assets/img/cubes-gold.webp"
+        "/assets/img/cubes-gold.webp",
+        "/assets/img/v-cube.webp"
       ],
       "kit": [
         {
@@ -129,7 +133,7 @@
         }
       ],
       "specs": [],
-      "video": ""
+      "video": "/assets/video/cube.mp4"
     },
     {
       "id": "fan",

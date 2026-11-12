@@ -113,7 +113,7 @@ content:
         type: string
     - name: video
       label: Ссылка на видео
-      description: Ссылка для встраивания с VK Видео, Rutube или YouTube. Можно оставить пустым.
+      description: Ссылка для встраивания с VK Видео, Rutube или YouTube либо путь к файлу на сайте, например /assets/video/cube.mp4. Можно оставить пустым.
       type: string
 - name: gallery
   label: Галерея

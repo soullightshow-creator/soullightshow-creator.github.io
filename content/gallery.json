@@ -69,6 +69,48 @@
       "caption_en": "A duo with fans",
       "wide": false,
       "tall": false
+    },
+    {
+      "image": "/assets/img/v-blue-five.webp",
+      "caption": "Пять артистов в синем",
+      "caption_en": "Five performers in blue",
+      "wide": true,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/v-closeup.webp",
+      "caption": "Костюм крупным планом",
+      "caption_en": "A suit up close",
+      "wide": false,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/v-rainbow.webp",
+      "caption": "Построение в разных цветах",
+      "caption_en": "A formation in many colours",
+      "wide": false,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/v-cyan-five.webp",
+      "caption": "Синхронный танец",
+      "caption_en": "A synchronised dance",
+      "wide": true,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/v-purple.webp",
+      "caption": "Группа в сиреневом",
+      "caption_en": "The group in lilac",
+      "wide": false,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/v-cube.webp",
+      "caption": "Вращение куба",
+      "caption_en": "Spinning the cube",
+      "wide": false,
+      "tall": false
     }
   ]
 }

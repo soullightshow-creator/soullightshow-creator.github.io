@@ -26,14 +26,21 @@
   });
   document.getElementById('heroDots').append(...dots);
   let cur = 0, timer = 0;
+  const heroVideo = document.getElementById('heroVideo');
   const go = (i) => {
     cur = (i + slides.length) % slides.length;
     slides.forEach((s, k) => s.classList.toggle('on', k === cur));
     dots.forEach((d, k) => d.setAttribute('aria-selected', k === cur));
+    // видео на первом слайде идёт с начала и не тратит трафик, пока слайд скрыт
+    if (heroVideo) {
+      if (cur === 0) { heroVideo.currentTime = 0; heroVideo.play().catch(() => {}); }
+      else setTimeout(() => { if (cur !== 0) heroVideo.pause(); }, 1300);
+    }
   };
+  // у слайда может быть своё время показа в data-hold
   const restart = () => {
-    clearInterval(timer);
-    timer = setInterval(() => go(cur + 1), 6500);
+    clearTimeout(timer);
+    timer = setTimeout(() => { go(cur + 1); restart(); }, +slides[cur].dataset.hold || 6500);
   };
   go(0);
   restart();

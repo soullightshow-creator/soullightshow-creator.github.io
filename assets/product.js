@@ -53,7 +53,17 @@
       specs.forEach((x) => $('pdSpecs').append(el('dt', '', t(x.name, x.name_en)), el('dd', '', t(x.value, x.value_en))));
       $('pdSpecsBox').hidden = false;
     }
-    if (p.video) { $('pdVideo').src = p.video; $('pdVideoBox').hidden = false; }
+    if (p.video) {
+      // файл с сайта показываем плеером, ссылку с YouTube и других площадок встраиваем
+      if (/\.(mp4|webm)(\?.*)?$/i.test(p.video)) {
+        const v = $('pdClip');
+        v.src = src(p.video);
+        if (images.length) v.poster = images[0];
+        v.hidden = false;
+        $('pdVideo').remove();
+      } else $('pdVideo').src = p.video;
+      $('pdVideoBox').hidden = false;
+    }
 
     // остальные товары
     const others = list.filter((x) => x !== p);
