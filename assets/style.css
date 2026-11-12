@@ -279,3 +279,13 @@ a.card { color: inherit; }
   .nav { gap: 16px; font-size: 13px; }
 }
 @media (max-width: 760px) { .nav { gap: 0; font-size: 18px; } }
+
+/* language switch */
+.lang { display: flex; border: 1px solid #ffffff33; border-radius: 999px; padding: 3px; }
+.lang button { background: none; border: 0; color: var(--mute); font: 500 13px/1 var(--font); letter-spacing: .12em; padding: 8px 12px; border-radius: 999px; cursor: pointer; transition: color .2s, background .2s; }
+.lang button:hover { color: var(--text); }
+.lang button[aria-pressed="true"] { background: var(--text); color: #000; }
+@media (max-width: 760px) {
+  .lang { margin-left: auto; }
+  .burger { margin-left: 4px; }
+}
