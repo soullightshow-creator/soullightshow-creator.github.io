@@ -17,7 +17,7 @@ burger.addEventListener('click', () => setMenu(!nav.classList.contains('open')))
 nav.addEventListener('click', (e) => { if (e.target.tagName === 'A') setMenu(false); });
 
 // reveal on scroll
-const targets = document.querySelectorAll('.head, .show, .card, .lab-img, .lab-text, .g, .contact > *');
+const targets = document.querySelectorAll('.head, .show, .card, .tech-card, .boards, .order li, .terms div, .lab-img, .lab-text, .g, .contact > *');
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
