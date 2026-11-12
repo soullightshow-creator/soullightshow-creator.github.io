@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Реквизит SOUL LIGHT</title>
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="top solid" id="top">
+  <a class="brand" href="index.html" aria-label="SOUL LIGHT"><img src="assets/img/logo.png" alt="SOUL LIGHT" width="559" height="651"></a>
+  <nav class="nav" id="nav">
+    <a href="index.html#show">Шоу</a>
+    <a href="index.html#props">Реквизит</a>
+    <a href="index.html#lab">Разработка</a>
+    <a href="index.html#order">Как заказать</a>
+    <a href="index.html#contact">Контакты</a>
+  </nav>
+  <a class="btn btn-small" href="index.html#contact">Заказать</a>
+  <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main class="pd" id="pd">
+  <nav class="crumbs"><a href="index.html">Главная</a> / <a href="index.html#props">Реквизит</a> / <span id="crumb"></span></nav>
+
+  <div class="pd-top">
+    <div class="pd-gallery">
+      <div class="pd-main"><img id="pdMain" alt=""></div>
+      <div class="pd-thumbs" id="pdThumbs"></div>
+    </div>
+    <div class="pd-info">
+      <span class="badge" id="pdBadge" hidden></span>
+      <h1 class="pd-title" id="pdName"></h1>
+      <p class="pd-text" id="pdText"></p>
+      <div class="pd-options" id="pdOptions" hidden></div>
+      <p class="pd-price" id="pdPrice"></p>
+      <div class="actions">
+        <a class="btn" href="index.html#contact">Узнать цену и сроки</a>
+      </div>
+      <ul class="pd-trust">
+        <li>Собственная разработка и сборка</li>
+        <li>Выступаем с этим реквизитом сами</li>
+        <li>Подберём комплект под ваш номер</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pd-blocks">
+    <section class="pd-block" id="pdFeaturesBox"><h2>Особенности</h2><ul class="ticks" id="pdFeatures"></ul></section>
+    <section class="pd-block" id="pdKitBox"><h2>Что входит</h2><ul class="ticks" id="pdKit"></ul></section>
+    <section class="pd-block" id="pdSpecsBox" hidden><h2>Характеристики</h2><dl class="specs" id="pdSpecs"></dl></section>
+  </div>
+
+  <section class="pd-video" id="pdVideoBox" hidden>
+    <h2>Видео</h2>
+    <div class="video"><iframe id="pdVideo" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  </section>
+
+  <section class="pd-more">
+    <h2>Ещё реквизит</h2>
+    <div class="cards" id="pdMore"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>© <span id="year"></span> SOUL LIGHT</span>
+  <a href="index.html">На главную</a>
+</footer>
+
+<script src="assets/products.js"></script>
+<script src="assets/product.js"></script>
+</body>
+</html>
