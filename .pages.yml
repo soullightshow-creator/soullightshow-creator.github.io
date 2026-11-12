@@ -146,7 +146,7 @@ content:
       label: Высокая плитка
       type: boolean
 - name: site
-  label: Контакты и платы
+  label: Контакты, соцсети, платы
   type: file
   path: content/site.json
   format: json
@@ -169,6 +169,18 @@ content:
   - name: vk
     label: ВКонтакте
     description: Полная ссылка на группу.
+    type: string
+  - name: youtube
+    label: YouTube
+    description: Полная ссылка на канал. Если поле пустое, значок на сайте не показывается.
+    type: string
+  - name: instagram
+    label: Instagram
+    description: Полная ссылка на профиль.
+    type: string
+  - name: tiktok
+    label: TikTok
+    description: Полная ссылка на профиль.
     type: string
   - name: boards
     label: Поддерживаемые платы

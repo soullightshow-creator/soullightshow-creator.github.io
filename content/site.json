@@ -4,5 +4,12 @@
   "phone": "",
   "email": "",
   "vk": "",
-  "boards": ["ESP32", "ESP32-C3 Super Mini", "Black Pill"]
+  "youtube": "https://www.youtube.com/@soullightshow4815",
+  "instagram": "https://www.instagram.com/soullight.show/",
+  "tiktok": "https://www.tiktok.com/@soul_light_show",
+  "boards": [
+    "ESP32",
+    "ESP32-C3 Super Mini",
+    "Black Pill"
+  ]
 }

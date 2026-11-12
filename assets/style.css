@@ -293,3 +293,16 @@ a.card { color: inherit; }
 /* gallery tiles and card images now come from content files */
 .g > img { width: 100%; height: 100%; }
 .contact .actions .sub { margin: 0; }
+
+/* social icons */
+.socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 28px; }
+.socials:empty { display: none; }
+.socials a { width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; border: 1px solid #ffffff33; color: var(--text); transition: color .25s, border-color .25s, box-shadow .25s, transform .25s; }
+.socials a:hover { transform: translateY(-3px); }
+.socials a[aria-label="YouTube"]:hover { color: #ff4b4b; border-color: #ff4b4b; box-shadow: 0 0 26px #ff4b4b66; }
+.socials a[aria-label="Instagram"]:hover { color: var(--pink); border-color: var(--pink); box-shadow: 0 0 26px #ff3d8b66; }
+.socials a[aria-label="TikTok"]:hover { color: var(--cyan); border-color: var(--cyan); box-shadow: 0 0 26px #2fe6e066; }
+.socials.small { margin-top: 0; gap: 8px; }
+.socials.small a { width: 38px; height: 38px; border-color: transparent; color: var(--mute); }
+.socials.small svg { width: 20px; height: 20px; }
+.foot { align-items: center; gap: 16px; flex-wrap: wrap; }
