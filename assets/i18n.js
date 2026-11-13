@@ -170,6 +170,7 @@
     });
     document.title = lang === 'ru' ? titleRu : EN[titleRu] ?? titleRu.split('. ').map((part) => tr(part, lang) ?? part).join('. ');
     document.documentElement.lang = lang;
+    document.documentElement.classList.remove('i18n-wait');
     document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === lang));
   };
 
@@ -178,8 +179,8 @@
     set: (v) => { try { localStorage.setItem('lang', v); } catch { /* private mode */ } },
   };
   const fromUrl = new URLSearchParams(location.search).get('lang');
-  const browserRu = (navigator.language || 'ru').toLowerCase().startsWith('ru');
-  let lang = ['ru', 'en'].includes(fromUrl) ? fromUrl : store.get() || (browserRu ? 'ru' : 'en');
+  // по умолчанию сайт открывается на английском, русский включается переключателем и запоминается
+  let lang = ['ru', 'en'].includes(fromUrl) ? fromUrl : store.get() || 'en';
   if (fromUrl) store.set(lang);
 
   document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => {
