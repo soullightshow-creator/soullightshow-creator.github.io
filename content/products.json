@@ -12,6 +12,9 @@
       "badge": "",
       "images": [
         "/assets/img/trio-rgb.webp",
+        "/assets/img/n-four-colors.webp",
+        "/assets/img/n-trio-heart.webp",
+        "/assets/img/n-pairs.webp",
         "/assets/img/four-cyan.webp",
         "/assets/img/four-red.webp",
         "/assets/img/helmets-macro.webp",
@@ -109,7 +112,7 @@
       "images": [
         "/assets/img/cubes-four.webp",
         "/assets/img/cubes-up.webp",
-        "/assets/img/cubes-gold.webp",
+        "/assets/img/n-cubes-blue.webp",
         "/assets/img/v-cube.webp"
       ],
       "kit": [
@@ -147,9 +150,10 @@
       "badge": "",
       "images": [
         "/assets/img/hero-fans.webp",
+        "/assets/img/n-fans-red.webp",
         "/assets/img/fans-heart.webp",
         "/assets/img/fans-purple.webp",
-        "/assets/img/fans-duo.webp"
+        "/assets/img/n-fans-blue.webp"
       ],
       "kit": [
         {

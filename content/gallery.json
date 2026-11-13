@@ -1,6 +1,48 @@
 {
   "items": [
     {
+      "image": "/assets/img/n-pairs.webp",
+      "caption": "Пары в пиксельных костюмах",
+      "caption_en": "Pairs in pixel suits",
+      "wide": true,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/n-trio-heart.webp",
+      "caption": "Трио с сердцем на костюме",
+      "caption_en": "A trio with a heart on the suit",
+      "wide": false,
+      "tall": true
+    },
+    {
+      "image": "/assets/img/n-fans-red.webp",
+      "caption": "Четыре артиста с веерами",
+      "caption_en": "Four performers with fans",
+      "wide": true,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/n-four-colors.webp",
+      "caption": "Четыре цвета",
+      "caption_en": "Four colours",
+      "wide": false,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/n-walk.webp",
+      "caption": "Шаг в профиль",
+      "caption_en": "A walk in profile",
+      "wide": false,
+      "tall": false
+    },
+    {
+      "image": "/assets/img/n-point.webp",
+      "caption": "Синхронное движение",
+      "caption_en": "A synchronised move",
+      "wide": false,
+      "tall": false
+    },
+    {
       "image": "/assets/img/fans-heart.webp",
       "caption": "Сердце из светодиодных вееров",
       "caption_en": "A heart made of LED fans",
@@ -29,11 +71,11 @@
       "tall": false
     },
     {
-      "image": "/assets/img/cubes-gold.webp",
-      "caption": "Золотые световые кубы",
-      "caption_en": "Golden light cubes",
-      "wide": false,
-      "tall": true
+      "image": "/assets/img/n-cubes-blue.webp",
+      "caption": "Номер с кубами",
+      "caption_en": "The cube act",
+      "wide": true,
+      "tall": false
     },
     {
       "image": "/assets/img/four-cyan.webp",
@@ -64,11 +106,11 @@
       "tall": false
     },
     {
-      "image": "/assets/img/fans-duo.webp",
+      "image": "/assets/img/n-fans-blue.webp",
       "caption": "Дуэт с веерами",
       "caption_en": "A duo with fans",
       "wide": false,
-      "tall": false
+      "tall": true
     },
     {
       "image": "/assets/img/v-blue-five.webp",
