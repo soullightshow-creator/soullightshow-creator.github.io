@@ -175,8 +175,8 @@
   };
 
   const store = {
-    get: () => { try { return localStorage.getItem('lang'); } catch { return null; } },
-    set: (v) => { try { localStorage.setItem('lang', v); } catch { /* private mode */ } },
+    get: () => { try { return localStorage.getItem('sl-lang'); } catch { return null; } },
+    set: (v) => { try { localStorage.setItem('sl-lang', v); } catch { /* private mode */ } },
   };
   const fromUrl = new URLSearchParams(location.search).get('lang');
   // по умолчанию сайт открывается на английском, русский включается переключателем и запоминается
