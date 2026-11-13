@@ -144,8 +144,8 @@
       s.email && [s.email, 'mailto:' + s.email],
     ].filter(Boolean);
     if (links.length) {
-      document.getElementById('contactBtns').replaceChildren(...links.map(([label, href], i) => {
-        const a = el('a', 'btn' + (i ? ' btn-ghost' : ''), label);
+      document.getElementById('contactBtns').replaceChildren(...links.map(([label, href]) => {
+        const a = el('a', 'btn btn-ghost', label);
         a.href = href;
         if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; }
         return a;
